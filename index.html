@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Modern Weather</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: all 0.5s ease; }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .dark .glass { background: rgba(0, 0, 0, 0.2); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-400 to-blue-600 min-h-screen text-white">
+
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <h1 class="text-2xl font-bold tracking-tighter">SKYCAST</h1>
+        <nav class="hidden md:flex space-x-8 opacity-90">
+            <a href="#" class="hover:text-blue-200 transition">Home</a>
+            <a href="./about.html" class="hover:text-blue-200 transition">About</a>
+        </nav>
+        <button id="theme-toggle" class="p-2 glass rounded-full">🌙</button>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+        <section class="text-center mb-16 animate-fade-in">
+            <div class="flex flex-col items-center">
+                <input type="text" id="city-input" placeholder="Search City..." class="bg-white/20 border-none rounded-full px-6 py-2 mb-8 focus:ring-2 ring-white/50 outline-none text-white placeholder-white/70">
+                <h2 id="city-name" class="text-6xl font-semibold mb-2">London</h2>
+                <p id="weather-desc" class="text-xl opacity-80 capitalize">Scattered Clouds</p>
+                <h3 id="temp" class="text-9xl font-light mt-4">24°</h3>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="glass p-6 rounded-3xl hover:scale-105 transition-transform">
+                <p class="text-sm opacity-70">Humidity</p>
+                <p id="humidity" class="text-2xl font-semibold">64%</p>
+            </div>
+            <div class="glass p-6 rounded-3xl hover:scale-105 transition-transform">
+                <p class="text-sm opacity-70">Wind Speed</p>
+                <p id="wind" class="text-2xl font-semibold">12 km/h</p>
+            </div>
+            <div class="glass p-6 rounded-3xl hover:scale-105 transition-transform">
+                <p class="text-sm opacity-70">Pressure</p>
+                <p id="pressure" class="text-2xl font-semibold">1012 hPa</p>
+            </div>
+        </div>
+
+        <h4 class="text-xl mb-6 font-semibold">5-Day Forecast</h4>
+        <div id="forecast-container" class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
